@@ -1,0 +1,10 @@
+-
+  name: Secure internal vms
+  hosts: target1, target2
+  tasks:
+    -
+      name: Disable ssh password authentication
+      replace:
+        path: /etc/ssh/sshd_config
+        regexp: '#PasswordAuthentication yes'
+        replace: '#PasswordAuthentication no'
